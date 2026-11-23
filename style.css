@@ -1,0 +1,324 @@
+/* ==========================================================================
+   RENEW - AI-Powered Addiction Recovery & Wellness Platform
+   Theme: Medical SaaS / Modern Wellness Dashboard
+   Colors: Teal Green, Dark Navy, White, Soft Mint
+   Tagline: Every Day Sober. Every Step Stronger.
+   ========================================================================== */
+
+:root {
+  --primary-teal: #0d9488;
+  --primary-teal-dark: #0f766e;
+  --primary-teal-light: #14b8a6;
+  --primary-mint: #ccfbf1;
+  --primary-mint-subtle: #f0fdfa;
+  --primary-navy: #0f172a;
+  --primary-navy-surface: #1e293b;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+
+  --amber-500: #f59e0b;
+  --amber-100: #fef3c7;
+  --rose-500: #f43f5e;
+  --rose-600: #e11d48;
+  --rose-50: #fff1f2;
+  --rose-100: #ffe4e6;
+  --emerald-500: #10b981;
+  --emerald-100: #d1fae5;
+  --violet-500: #8b5cf6;
+  --violet-100: #ede9fe;
+  --cyan-500: #06b6d4;
+
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --shadow-teal: 0 10px 25px -3px rgba(13, 148, 136, 0.25);
+  --shadow-rose: 0 10px 25px -3px rgba(244, 63, 94, 0.3);
+}
+
+/* Reset and Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--slate-800);
+  background-color: #f6f9f8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+  background: radial-gradient(circle at 10% 10%, #f0fdfa 0%, #f8fafc 40%, #f1f5f9 100%);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--slate-900);
+  line-height: 1.25;
+}
+
+/* Breathing Orb Animation */
+@keyframes breatheScale {
+  0%, 100% {
+    transform: scale(0.85);
+    box-shadow: 0 0 35px rgba(13, 148, 136, 0.35), inset 0 0 25px rgba(20, 184, 166, 0.4);
+    opacity: 0.85;
+  }
+  30%, 55% {
+    transform: scale(1.3);
+    box-shadow: 0 0 85px rgba(20, 184, 166, 0.7), inset 0 0 50px rgba(94, 234, 212, 0.8);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.22);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.6);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 16px rgba(244, 63, 94, 0);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pulse-emergency {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.breathing-orb {
+  animation: breatheScale 16s infinite ease-in-out;
+  transition: all 0.5s ease;
+}
+
+/* Calming Ambient Gradients */
+.bg-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.bg-glass-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+.gradient-teal {
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%);
+}
+
+.gradient-mint-light {
+  background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 50%, #ccfbf1 100%);
+}
+
+.gradient-navy {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.gradient-sunset {
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+}
+
+/* Glassmorphism Cards */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
+}
+
+/* Custom Interactive Checkbox */
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+.custom-checkbox:hover {
+  border-color: var(--primary-teal);
+  background-color: #f0fdfa;
+}
+.custom-checkbox:checked {
+  background-color: var(--primary-teal);
+  border-color: var(--primary-teal);
+}
+.custom-checkbox:checked::before {
+  content: "";
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+/* Confetti Canvas overlay */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* Toast Container */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 14px 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-left: 5px solid var(--primary-teal);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 300px;
+  max-width: 440px;
+  animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: all 0.3s ease;
+}
+
+.toast.toast-danger {
+  border-left-color: var(--rose-500);
+}
+.toast.toast-success {
+  border-left-color: var(--emerald-500);
+}
+.toast.toast-warning {
+  border-left-color: var(--amber-500);
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Fullscreen SOS Backdrop */
+.sos-backdrop {
+  background: radial-gradient(circle at center, #0f2b2b 0%, #071518 70%, #020708 100%);
+}
+
+/* Range input styling */
+input[type="range"] {
+  accent-color: var(--primary-teal);
+}
+
+/* Print styles for clinical reports */
+@media print {
+  body {
+    background: white !important;
+  }
+  .no-print, header, nav, #toast-container, .sos-floating-btn {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .card-print {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
