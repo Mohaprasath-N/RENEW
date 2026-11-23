@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RENEW – Rebuild Your Life | Every Day Sober. Every Step Stronger.</title>
+  
+  <!-- Favicon / Meta -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d9488'><path d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/></svg>">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+              950: '#042f2e',
+            },
+            navy: {
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#0a0f1d'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f6f9f8] text-slate-800 min-h-screen flex flex-col font-sans selection:bg-teal-100 selection:text-teal-900">
+
+  <!-- Interactive Confetti Canvas for Gamification Celebrations -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Interactive Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Application Mount Root -->
+  <div id="app-root" class="min-h-screen flex flex-col">
+    <!-- Rendered dynamically by app.js -->
+    <div class="flex-1 flex items-center justify-center py-20">
+      <div class="text-center space-y-3">
+        <div class="w-12 h-12 rounded-2xl bg-teal-600 animate-spin mx-auto flex items-center justify-center text-white">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+        </div>
+        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Loading RENEW Healthcare Suite...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
